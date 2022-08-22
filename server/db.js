@@ -2,9 +2,9 @@ import { createPool } from "mysql2/promise";
 
 export const pool = createPool({
   database: "mern-stack",
-  user: "zdw8njqwz1v3",
+  user: "zuj36e01yu37",
   host: "fia5451ohdzd.aws-eu-west-2-1.psdb.cloud",
-  password: "pscale_pw_QA-IeIkvkjYnn9y0j_a3jjSr5vuk3N70Tm_n6z2ORts",
+  password: "pscale_pw_fFJz0DBTgV5EiH__STYjwzfaLTkw5LGQaA1azhJJYdk",
   ssl: {
     rejectUnauthorized: false,
   },

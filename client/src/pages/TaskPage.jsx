@@ -1,17 +1,13 @@
 import React,{useEffect,useState} from 'react'
-import {allTaskRequest} from '../api/tasks.api'
 import Card from '../components/Card'
+import {useTask} from '../context/TaskContext'
 
 const TaskPage = () => {
-  const [tasks, setTasks] = useState([])
+
+  const {tasks,loadTasks} = useTask();
+  
   useEffect(() => {
-
-    async function loadTasks() {
-      const res = await allTaskRequest()
-      setTasks(res.data)
-    }
     loadTasks()
-
   }, [])
 
   function renderMain() {
@@ -23,8 +19,10 @@ const TaskPage = () => {
   
   return (
     <div>
-      <h1>All task</h1>
-      {tasks.length === 0 ? 'NO HAY TAREAS PENDIENTES' : `Tareas Pendientes:${tasks.length}`}
+      <h1 className='text-xl p-2 text-center'>All task are put it here!</h1>
+      <h2 className='text-xl p-2'>
+        {tasks.length === 0 ? 'NO HAY TAREAS PENDIENTES' : `Tareas Pendientes:${tasks.length}`}
+        </h2>
       <ul>
       {renderMain()}
       </ul>
